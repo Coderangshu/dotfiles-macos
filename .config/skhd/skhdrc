@@ -1,0 +1,32 @@
+# change window focus within space
+# change window focus with wrap-around
+alt - h : $HOME/.config/skhd/focus_wrap.sh west
+alt - l : $HOME/.config/skhd/focus_wrap.sh east
+alt - k : $HOME/.config/skhd/focus_wrap.sh north
+alt - j : $HOME/.config/skhd/focus_wrap.sh south
+
+# toggle window float
+alt - f : yabai -m window --toggle float --grid 4:4:1:1:2:2
+
+# maximize a window
+alt - m : yabai -m window --toggle zoom-fullscreen
+
+# balance out tree of windows (resize to occupy same area)
+alt - e : yabai -m space --balance
+
+# swap windows
+shift + alt - j : yabai -m window --swap south
+shift + alt - k : yabai -m window --swap north
+shift + alt - h : yabai -m window --swap west
+shift + alt - l : yabai -m window --swap east
+
+# move window to display left and right
+ctrl + alt - h : yabai -m window --display west; yabai -m display --focus west;
+ctrl + alt - l : yabai -m window --display east; yabai -m display --focus east;
+ctrl + alt - k : yabai -m window --display north; yabai -m display --focus north;
+ctrl + alt - j : yabai -m window --display south; yabai -m display --focus south;
+
+# stop/start/restart yabai
+ctrl + alt - q : yabai --stop-service
+ctrl + alt - s : yabai --start-service
+ctrl + alt - r : yabai --restart-service

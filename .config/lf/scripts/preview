@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+file="$1"
+w="$2"
+h="$3"
+x="$4"
+y="$5"
+
+# Determine mime type
+mimetype=$(file --mime-type -Lb "$file")
+
+# Kitty icat helper
+kitty_show_image() {
+  kitty +kitten icat --silent --stdin no --transfer-mode file \
+    --place "${w}x${h}@${x}x${y}" "$1" < /dev/null > /dev/tty
+}
+
+case "$mimetype" in
+  image/*)
+    kitty_show_image "$file"
+    exit 1
+    ;;
+  video/*)
+    thumb="/tmp/lfthumb-$(basename "$file").png"
+    ffmpeg -i "$file" -vf "thumbnail,scale=320:-1" -frames:v 1 "$thumb" -y -loglevel quiet
+    [ -f "$thumb" ] && kitty_show_image "$thumb"
+    exit 1
+    ;;
+  application/pdf)
+    thumb="/tmp/lfthumb-$(basename "$file" .pdf).png"
+    pdftoppm -f 1 -singlefile -png "$file" "/tmp/lfthumb-$(basename "$file" .pdf)" >/dev/null 2>&1
+    [ -f "$thumb" ] && kitty_show_image "$thumb"
+    exit 1
+    ;;
+  text/*|application/json|application/xml)
+    bat --color=always --style=plain "$file" 2>/dev/null || cat "$file"
+    exit 0
+    ;;
+  *)
+    echo "No preview available for this file type: $mimetype"
+    exit 0
+    ;;
+esac
+
