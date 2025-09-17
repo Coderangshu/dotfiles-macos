@@ -20,11 +20,16 @@ ctrl + alt - k : yabai -m window --swap north
 ctrl + alt - h : yabai -m window --swap west
 ctrl + alt - l : yabai -m window --swap east
 
-# move window to display left and right
-shift + alt - h : yabai -m window --display west; yabai -m display --focus west;
-shift + alt - l : yabai -m window --display east; yabai -m display --focus east;
-shift + alt - k : yabai -m window --display north; yabai -m display --focus north;
-shift + alt - j : yabai -m window --display south; yabai -m display --focus south;
+# move window to display left, right, up and down
+shift + alt - h : ~/.config/skhd/move_window_focus.sh west
+shift + alt - l : ~/.config/skhd/move_window_focus.sh east
+shift + alt - k : ~/.config/skhd/move_window_focus.sh north
+shift + alt - j : ~/.config/skhd/move_window_focus.sh south
+
+# shift + alt - h : yabai -m window --display west; yabai -m display --focus west;
+# shift + alt - l : yabai -m window --display east; yabai -m display --focus east;
+# shift + alt - k : yabai -m window --display north; yabai -m display --focus north;
+# shift + alt - j : yabai -m window --display south; yabai -m display --focus south;
 
 # stop/start/restart yabai
 ctrl + alt - q : yabai --stop-service
