@@ -18,4 +18,3 @@ Steps for setting it up in new system:
 8. skhd
 9. trash
 10. yabai
-11. ls
