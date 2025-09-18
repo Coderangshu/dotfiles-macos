@@ -31,4 +31,4 @@ yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^AppCleaner$" manage=off
 
-borders active_color=0xffffb347 inactive_color=0x00000000 width=6.0 radius=4.0 hidpi=on &
+borders active_color=0xffffb347 inactive_color=0x00000000 width=6.0 hidpi=on ax_focus=on &

@@ -13,7 +13,7 @@ if ! yabai -m window --focus "$direction"; then
     esac
 
     # find all windows on the now-focused display
-    windows=$(yabai -m query --windows --display | jq -r 'sort_by(.frame.x, .frame.y) | .[].id')
+    windows=$(yabai -m query --windows --display | jq -r '[.[] | select(.minimized == false)] | sort_by(.frame.x, .frame.y) | .[].id')
 
     if [ -n "$windows" ]; then
         case "$direction" in

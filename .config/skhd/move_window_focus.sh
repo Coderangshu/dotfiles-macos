@@ -28,4 +28,3 @@ yabai -m display --focus "$dir"
 
 # Re-focus the same window
 yabai -m window --focus "$id"
-
