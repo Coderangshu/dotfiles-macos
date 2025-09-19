@@ -45,6 +45,8 @@ yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^AppCleaner$" manage=off
+yabai -m rule --add title="^Music$" manage=off
+yabai -m rule --add title="^TV$" manage=off
 
 # -----------------------------
 # Borders
