@@ -23,6 +23,7 @@ alias .5='cd ../../../../..'
 alias mkdir='mkdir -p'
 alias untar='tar -xzvf'
 alias track='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias colima='colima --profile rosetta'
 
 lfcd() {
 	tmp="$(mktemp)"

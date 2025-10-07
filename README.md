@@ -17,4 +17,5 @@ Steps for setting it up in new system:
 7. neovim
 8. skhd
 9. trash
-10. yabai
+10. watch
+11. yabai
