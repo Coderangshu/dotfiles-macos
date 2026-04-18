@@ -1,0 +1,7 @@
+{
+  "statusLine": {
+    "type": "command",
+    "command": "/Users/angshuman/.claude/statusline-command.sh"
+  },
+  "effortLevel": "medium"
+}
